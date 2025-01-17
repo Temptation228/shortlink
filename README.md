@@ -99,7 +99,29 @@ curl -X POST http://localhost:8000/links \
 -d '{"uuid": "your_uuid"}'
 ```
 
-### 5. Удаление ссылки (/links/delete)
+### 5. Обновление числа кликов (/links/administrate)
+
+- **Метод:** POST
+- **URL:** `http://localhost:8000/links/administrate`
+- **Заголовки:**
+  - `Content-Type: application/json`
+- **Тело запроса:**
+```json
+{
+    {
+       "linkId": 1,
+       "newMaxClicks": 10
+     }
+}
+```
+
+```
+curl -X POST http://localhost:8000/links/administrate \
+-H "Content-Type: application/json" \
+-d '{"linkId": 1, "newMaxClicks": 10}'
+```
+
+### 6. Удаление ссылки (/links/delete)
 
 - **Метод:** DELETE
 - **URL:** `http://localhost:8000/links/delete/{id}`
@@ -111,7 +133,7 @@ curl -X POST http://localhost:8000/links \
 curl -X DELETE http://localhost:8000/links/delete/1
 ```
 
-### 6. Редирект (/)
+### 7. Редирект (/)
 
 - **Метод:** GET
 - **URL:** `http://localhost:8000/{shortUrl}`
