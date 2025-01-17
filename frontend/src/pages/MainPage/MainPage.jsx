@@ -112,6 +112,27 @@ export const MainPage = () => {
         setErrorMessage('');
     };
 
+    const handleMaxClicksChange = async (linkId, newMaxClicks) => {
+        try {
+            const response = await fetch(`http://localhost:8000/links/administrate`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ linkId, newMaxClicks })
+            });
+
+            if (response.ok) {
+                fetchLinks();
+                console.log(`Максимальное число переходов для ссылки с ID ${linkId} обновлено на ${newMaxClicks}`);
+            } else {
+                console.error('Ошибка обновления максимального числа переходов');
+            }
+        } catch (error) {
+            console.error('Ошибка при обновлении максимального числа переходов:', error);
+        }
+    };
+
     return (
         <div className={style.mainPage}>
             <div className={style.left}>
@@ -197,6 +218,11 @@ export const MainPage = () => {
                                 ? <p>Ссылка работает</p>
                                 : <p style={{color: 'red'}}>Ссылка недействительна</p>
                             }
+                            <input
+                                type="number"
+                                placeholder="Новое число переходов"
+                                onChange={(e) => handleMaxClicksChange(link.id, e.target.value)}
+                            />
                             <button onClick={() => handleDeleteLink(link.id)} className={style.linkDelete}>Удалить ссылку</button>
                         </div>
                     ))}

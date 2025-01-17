@@ -14,6 +14,7 @@ public class RequestController implements HttpHandler {
     private final RetrieveLinksHandler retrieveLinksHandler;
     private final RedirectHandler redirectHandler;
     private final DeleteLinkHandler deleteLinkHandler;
+    private final IncreaseClicksHandler increaseClicksHandler;
 
     public RequestController(DatabaseManager databaseManager) {
         this.shortenLinkHandler = new ShortenLinkHandler(databaseManager);
@@ -22,6 +23,7 @@ public class RequestController implements HttpHandler {
         this.authHandler = new AuthHandler(databaseManager);
         this.retrieveLinksHandler = new RetrieveLinksHandler(databaseManager);
         this.deleteLinkHandler = new DeleteLinkHandler(databaseManager);
+        this.increaseClicksHandler = new IncreaseClicksHandler(databaseManager);
     }
 
     @Override
@@ -45,6 +47,8 @@ public class RequestController implements HttpHandler {
             retrieveLinksHandler.handle(exchange);
         } else if (path.startsWith("/links/delete")) { 
             deleteLinkHandler.handle(exchange);
+        } else if (path.startsWith("/links/administrate")) {
+            increaseClicksHandler.handle(exchange);
         } else {
             redirectHandler.handle(exchange);
         }

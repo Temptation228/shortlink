@@ -174,4 +174,16 @@ public class DatabaseManager {
             System.err.println("Ошибка при удалении ссылки: " + e.getMessage());
         }
     }
+    public void updateMaxClicks(int linkId, int newMaxClicks) {
+        String sql = "UPDATE links SET max_clicks = ? WHERE id = ?";
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, newMaxClicks);
+            pstmt.setInt(2, linkId);
+            pstmt.executeUpdate();
+            System.out.println("Максимальное количество переходов для ссылки с ID " + linkId + " обновлено на " + newMaxClicks);
+        } catch (SQLException e) {
+            System.err.println("Ошибка при обновлении максимального количества переходов: " + e.getMessage());
+        }
+    }
 }

@@ -73,7 +73,7 @@ export const AuthPage = () => {
                     </div>
                 }
                 <div className={style.formEl}>
-                    <label>Password</label>
+                    <label>Пароль</label>
                     <input 
                         type="password" 
                         value={password} 
