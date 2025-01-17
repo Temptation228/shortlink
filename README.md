@@ -1,7 +1,7 @@
 # API Documentation
 
 ## Overview
-Это документация для API
+Это документация для API. Если есть пакетный менеджер npm для Node.js, тогда можной перейти в папку frontend и ввести : npm install, npm start. 
 
 ## Эндпоинты
 
@@ -105,7 +105,7 @@ curl -X POST http://localhost:8000/links \
 curl -X DELETE http://localhost:8000/links/delete/1
 ```
 
-### 6. Редирект (/links)
+### 6. Редирект (/)
 
 - **Метод:** GET
 - **URL:** `http://localhost:8000/{shortUrl}`
