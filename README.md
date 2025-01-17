@@ -7,7 +7,7 @@
 
 `npm start` 
 
-Код в master
+Код в `master`
 
 ## Эндпоинты
 
