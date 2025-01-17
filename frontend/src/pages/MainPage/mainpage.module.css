@@ -1,0 +1,115 @@
+.mainPage {
+    width: 90vw;
+    min-height: 80vh;
+    height: fit-content;
+    background-color: #1e1e1e;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    width: 45%;
+}
+.authHelper{
+    background-color: #6c6c6c;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+}
+.descr {
+    font-size: 24px;
+    color: black;
+    font-weight: 700
+}
+.uuid {
+    font-size: 20px;
+    color: black;
+    font-weight: 700;
+}
+
+
+
+.linkFuncs {
+    display: flex;
+    flex-direction: column;
+}
+.makeLink {
+    background-color: #6c6c6c;
+    border-radius: 5px;
+    color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+.form {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formEl {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.formEl label {
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+}
+.formEl input {
+    background-color: black;
+    border-radius: 5px;
+    font-size: 24px;
+    outline: none;
+    border: none;
+    color: #6c6c6c;
+    padding: 0.5vw 1.5vh;
+}
+.formEl input:focus {
+    outline: none;        
+    box-shadow: none;    
+}
+.left h2 {
+    background-color: #6c6c6c;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.left p{
+    background-color: #1e1e1e;
+    padding: 5px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 12px;
+}
+.linkItem {
+    background-color: #6c6c6c;
+    width: 70%;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 25px;
+}
+.linksList {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+.linkDelete {
+    color: red;
+    background-color: #1e1e1e;
+    border: 1px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
