@@ -7,6 +7,8 @@
 
 `npm start` 
 
+Код в master
+
 ## Эндпоинты
 
 ### 1. Регистрация (/register)
