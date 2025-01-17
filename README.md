@@ -18,17 +18,101 @@
         "password": "your_password"
     }
 }
+```
 
-### 2. Авторизация (/register)
+```json
+curl -X POST http://localhost:8000/register \
+-H "Content-Type: application/json" \
+-d '{"body": {"password": "your_password"}}'
+```
+
+### 2. Авторизация (/auth)
 
 - **Метод:** POST
-- **URL:** `http://localhost:8000/register`
+- **URL:** `http://localhost:8000/auth`
 - **Заголовки:**
   - `Content-Type: application/json`
 - **Тело запроса:**
 ```json
 {
     "body": {
+        "uuid": "your_uuid",
         "password": "your_password"
     }
 }
+```
+
+```json
+curl -X POST http://localhost:8000/auth \
+-H "Content-Type: application/json" \
+-d '{"body": {"uuid": "your_uuid", "password": "your_password"}}'
+```
+
+### 3. Создание ссылки (/shorten)
+
+- **Метод:** POST
+- **URL:** `http://localhost:8000/shorten`
+- **Заголовки:**
+  - `Content-Type: application/json`
+- **Тело запроса:**
+```json
+{
+    "body": {
+        "uuid": "your_uuid",
+        "url": "http://example.com",
+        "maxClicks": 10,
+        "expirationTime": 60
+    }
+}
+```
+
+```json
+curl -X POST http://localhost:8000/shorten \
+-H "Content-Type: application/json" \
+-d '{"body": {"uuid": "your_uuid", "url": "http://example.com", "maxClicks": 10, "expirationTime": 60}}'
+```
+
+### 4. Получение ссылок (/links)
+
+- **Метод:** POST
+- **URL:** `http://localhost:8000/links`
+- **Заголовки:**
+  - `Content-Type: application/json`
+- **Тело запроса:**
+```json
+{
+    {
+      "uuid": "your_uuid"
+    }
+}
+```
+
+```json
+curl -X POST http://localhost:8000/links \
+-H "Content-Type: application/json" \
+-d '{"uuid": "your_uuid"}'
+```
+
+### 5. Удаление ссылки (/links/delete)
+
+- **Метод:** DELETE
+- **URL:** `http://localhost:8000/links/delete/{id}`
+- **Заголовки:**
+  - `Content-Type: application/json`
+- **Тело запроса:**
+
+```json
+curl -X DELETE http://localhost:8000/links/delete/1
+```
+
+### 6. Редирект (/links)
+
+- **Метод:** GET
+- **URL:** `http://localhost:8000/{shortUrl}`
+- **Заголовки:**
+  - `Content-Type: application/json`
+- **Тело запроса:**
+
+```json
+curl -L http://localhost:8000/shortUrl
+```
