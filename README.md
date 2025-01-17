@@ -1,7 +1,11 @@
 # API Documentation
 
 ## Overview
-Это документация для API. Если есть пакетный менеджер npm для Node.js, тогда можной перейти в папку frontend и ввести : npm install, npm start. 
+Это документация для API. Если есть пакетный менеджер npm для Node.js, тогда можной перейти в папку frontend и ввести: 
+
+`npm install`
+
+`npm start` 
 
 ## Эндпоинты
 
