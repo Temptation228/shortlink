@@ -24,7 +24,7 @@
 }
 ```
 
-```json
+```
 curl -X POST http://localhost:8000/register \
 -H "Content-Type: application/json" \
 -d '{"body": {"password": "your_password"}}'
@@ -46,7 +46,7 @@ curl -X POST http://localhost:8000/register \
 }
 ```
 
-```json
+```
 curl -X POST http://localhost:8000/auth \
 -H "Content-Type: application/json" \
 -d '{"body": {"uuid": "your_uuid", "password": "your_password"}}'
@@ -70,7 +70,7 @@ curl -X POST http://localhost:8000/auth \
 }
 ```
 
-```json
+```
 curl -X POST http://localhost:8000/shorten \
 -H "Content-Type: application/json" \
 -d '{"body": {"uuid": "your_uuid", "url": "http://example.com", "maxClicks": 10, "expirationTime": 60}}'
@@ -91,7 +91,7 @@ curl -X POST http://localhost:8000/shorten \
 }
 ```
 
-```json
+```
 curl -X POST http://localhost:8000/links \
 -H "Content-Type: application/json" \
 -d '{"uuid": "your_uuid"}'
@@ -105,7 +105,7 @@ curl -X POST http://localhost:8000/links \
   - `Content-Type: application/json`
 - **Тело запроса:**
 
-```json
+```
 curl -X DELETE http://localhost:8000/links/delete/1
 ```
 
@@ -117,6 +117,6 @@ curl -X DELETE http://localhost:8000/links/delete/1
   - `Content-Type: application/json`
 - **Тело запроса:**
 
-```json
+```
 curl -L http://localhost:8000/shortUrl
 ```
