@@ -126,7 +126,7 @@ curl -X POST http://localhost:8000/links/administrate \
 - **Метод:** DELETE
 - **URL:** `http://localhost:8000/links/delete/{id}`
 - **Заголовки:**
-  - `Content-Type: application/json`
+  - `Не нужны`
 - **Тело запроса:**
 
 ```
@@ -138,7 +138,7 @@ curl -X DELETE http://localhost:8000/links/delete/1
 - **Метод:** GET
 - **URL:** `http://localhost:8000/{shortUrl}`
 - **Заголовки:**
-  - `Content-Type: application/json`
+  - `Не нужны`
 - **Тело запроса:**
 
 ```
